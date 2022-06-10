@@ -6,7 +6,7 @@ import RestaurantsList from './componets/RestaurantsList';
 function App() {
   return (
     <div className="App">
-      <h1>  muhmmad ss </h1>   
+      <h1>  muhmmad sss </h1>   
       <RestaurantsList/>
     </div>
   );

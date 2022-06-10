@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.restaurants {
+  column-gap: 100px;
+  display: flex;
+  margin-top: 100px;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 100px;
+}
+
+.restaurant {
+  background-color: rgb(170, 178, 175);
+  margin-top: 50px;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.res-img {
+  width: 400px;
+  height: 220px;
+}
+
+
+.res-img img {
+  width: 400px;
+  height: 300px;
+  max-height: 100%;
+  max-width: 100%;
+}
