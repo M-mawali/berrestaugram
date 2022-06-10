@@ -37,7 +37,26 @@
   }
 }
 
+.Search-div {
+  display: flex;
+  margin-left: 150px;
+}
+
+.Search {
+  
+  border-radius: 40px;
+  width: 700px;
+  height: 45px;
+  margin: 12px 5px;
+  text-decoration: none;
+  color: var(--text-color);;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+}
+
 .restaurants {
+  margin-left: 100px;
   column-gap: 100px;
   display: flex;
   margin-top: 100px;
@@ -50,22 +69,23 @@
 .restaurant {
   background-color: rgb(170, 178, 175);
   margin-top: 50px;
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 511px;
   display: flex;
-  border-radius: 10px;
+  border-radius: 250px;
   flex-direction: column;
   margin-bottom: 5px;
 }
 .res-img {
-  width: 400px;
-  height: 220px;
+  width: 500px;
+  height: 350px;
 }
 
 
 .res-img img {
-  width: 400px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   max-height: 100%;
   max-width: 100%;
+  border-radius: 175px ;
 }

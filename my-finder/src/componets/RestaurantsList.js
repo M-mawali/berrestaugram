@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 
-function RestaurantsList (){
+function RestaurantsList (){//api fatching
     const [restaurants,setRestaurants] =useState([]);
     
     useEffect(()=>{
@@ -14,16 +14,29 @@ function RestaurantsList (){
     },[]);
     console.log(restaurants);
     return(
+        <>
+            <div className='search-div'>
+                <input
+                    className='Search'
+                    autoFocus='on'
+                    autoComplete='off'
+                    type='text'
+                    placeholder='type restaurant name or cuisine '
+                />
+            </div>
+
         <div className='restaurants'>
-        {restaurants.map((restaurant) => (
-            <div className='restaurant' key={restaurant.id}>    
-                    <div><h2>{restaurant.name}</h2></div>
+        {restaurants.map((restaurant) => (//restaurants list creating
+            <div className='restaurant' key={restaurant.id}>
+                    <br/>    
+                    <div style={{fontSize:'15px'}}><h3>{restaurant.name}</h3></div>
                     <div> Rate: {restaurant.rating} ({restaurant.user_ratings_total}) <h3>{restaurant.cuisine}</h3></div>
                     <div className='res-img'><img src={restaurant.photos[0].links[1]} alt='' /></div>
                     <div><h3>Address:</h3>{restaurant.formatted_address}</div>
             </div>  )
         )}
         </div>
+        </>
 )}
 
 export default RestaurantsList;
