@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function RestaurantsList (){//api fatching
@@ -20,7 +21,7 @@ function RestaurantsList (){//api fatching
         const {name , checked} =e.target
 
         const chkcuisine = restaurants.filter((e,restaurant)=>{
-            e.cuisine[restaurant].includes(name.toLowerCase())=checked});
+            e.cuisine[restaurant].includes(name.toLowerCase())});
         setFilteredRestaurants(chkcuisine)
         console.log(filteredRstaurants)
     }
@@ -61,12 +62,15 @@ function RestaurantsList (){//api fatching
         <div className='restaurants'>
         {filteredRstaurants && filteredRstaurants.map((restaurant) => (//restaurants list creating
             <div className='restaurant' key={restaurant.id}>
+                <Link to={`/RestaurantsList/${restaurant.id}`}>
                     <br/>    
                     <div style={{fontSize:'15px'}}><h3>{restaurant.name}</h3></div>
                     <div> Rate: <span style={{color:'gold'}}> {restaurant.rating} </span> ({restaurant.user_ratings_total}) <h3>{restaurant.cuisine}</h3></div>
                     <div className='res-img'><img src={restaurant.photos[0].links[1]} alt='' /></div>
                     <div><h3>Address:</h3>{restaurant.formatted_address}</div>
+                    </Link>
             </div>  )
         )}
         </div>
         </>)}
+        export default RestaurantsList;
