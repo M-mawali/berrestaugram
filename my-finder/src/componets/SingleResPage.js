@@ -18,7 +18,7 @@ function SingleRestaurant() {
     },[id]);
     console.log(singleRes)
 
-    return  (
+    return (
         <div className='single-page-name'>
         {singleRes && <h3>{singleRes.name}</h3>}
         </div>
