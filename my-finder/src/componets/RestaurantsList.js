@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 
@@ -15,7 +16,16 @@ function RestaurantsList (){//api fatching
     },[]);
     console.log(restaurants);
 
-    const onSearchedRestaurants = (e) => {
+    const onChkClick = (e) => {//checkbox results handler
+        const {name , checked} =e.target
+
+        const chkcuisine = restaurants.filter((e,restaurant)=>{
+            e.cuisine[restaurant].includes(name.toLowerCase())=checked});
+        setFilteredRestaurants(chkcuisine)
+        console.log(filteredRstaurants)
+    }
+
+    const onSearchedRestaurants = (e) => {// search results handler
         const search = e.target.value;
 
         const searchedRestaurants = restaurants.filter((restaurant) =>
@@ -27,7 +37,7 @@ function RestaurantsList (){//api fatching
     
     return(
         <>
-            <div className='search-div'>
+            <div className='search-div' >
                 <input
                     className='Search'
                     autoFocus='on'
@@ -36,6 +46,16 @@ function RestaurantsList (){//api fatching
                     placeholder='type restaurant name or cuisine '
                     onChange={onSearchedRestaurants}
                 />
+                <div> 
+                <input type='checkbox' name='italian' checked onChange={onChkClick}/>italian&nbsp;&nbsp;
+                <input type='checkbox' name='thai' onChange={onChkClick} />thai&nbsp;&nbsp;
+                <input type='checkbox' name='american' onChange={onChkClick} />american&nbsp;&nbsp;
+                <input type='checkbox' name='vietnameese' onChange={onChkClick} />vietnameese&nbsp;&nbsp;
+                <input type='checkbox' name='indian' onChange={onChkClick} />indian&nbsp;&nbsp;
+                <input type='checkbox' name='chinese' onChange={onChkClick} />chinese&nbsp;&nbsp;
+                <input type='checkbox' name='German' onChange={onChkClick} />german&nbsp;&nbsp;
+                <input type='checkbox' name='mexican' onChange={onChkClick} />mexican&nbsp;&nbsp;
+                </div>
             </div>
 
         <div className='restaurants'>
@@ -49,7 +69,4 @@ function RestaurantsList (){//api fatching
             </div>  )
         )}
         </div>
-        </>
-)}
-
-export default RestaurantsList;
+        </>)}
