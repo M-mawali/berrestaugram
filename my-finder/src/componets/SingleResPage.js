@@ -63,7 +63,7 @@ function SingleRestaurant() {
                 {singleRes && singleRes.geometry && singleRes.geometry.location && <YMaps>
     <div className="res-map">
         {singleRes && singleRes.formatted_address && <h3>{singleRes.formatted_address}</h3>}
-      <Map defaultState={{ center: [singleRes.geometry.location.lat, singleRes.geometry.location.lng], zoom: 12 }}>
+      <Map defaultState={{ center: [singleRes.geometry.location.lat, singleRes.geometry.location.lng], zoom: 12 }} height='650px' width='1200px'>
           <Placemark geometry={ [singleRes.geometry.location.lat, singleRes.geometry.location.lng]}/>
           <FullscreenControl options={{float: 'left'}}/>
           <GeolocationControl options={{float:'right'}}/>
