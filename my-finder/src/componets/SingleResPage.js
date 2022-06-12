@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { YMaps, Map, Placemark, FullscreenControl, GeolocationControl ,RouteButton } from '@pbe/react-yandex-maps';
+
 
 
 function SingleRestaurant() {
@@ -21,10 +23,11 @@ function SingleRestaurant() {
 
     return (
         <>
+        
         <div >
         {singleRes && <h2>{singleRes.name}</h2>}
         </div>
-        <div>{singleRes && singleRes.cuisine && <h3> enjoy with us finest dishes from the  {singleRes.cuisine} cuisine</h3>} </div>
+        <div>{singleRes && singleRes.cuisine && <h3> Finest dishes from the  {singleRes.cuisine} cuisine</h3>} </div>
         <div className='dishs-imgs'>
             <div className="dish">  {singleRes && singleRes.photos && singleRes.photos[0] && singleRes.photos[0].links &&
                     singleRes.photos[0].links[0] && (
@@ -56,6 +59,21 @@ function SingleRestaurant() {
                 {singleRes && singleRes.social && singleRes.social.email && <li>Email : {singleRes.social.email } </li>}
                 </ul>
             </div>
+            <div>
+                {singleRes && singleRes.geometry && singleRes.geometry.location && <YMaps>
+    <div className="res-map">
+        {singleRes && singleRes.formatted_address && <h3>{singleRes.formatted_address}</h3>}
+      <Map defaultState={{ center: [singleRes.geometry.location.lat, singleRes.geometry.location.lng], zoom: 12 }}>
+          <Placemark geometry={ [singleRes.geometry.location.lat, singleRes.geometry.location.lng]}/>
+          <FullscreenControl options={{float: 'left'}}/>
+          <GeolocationControl options={{float:'right'}}/>
+          <RouteButton options={{float: 'right' }} />
+
+      </Map>
+    </div>
+  </YMaps>}
+            </div>
+            
         </>
     )}
 export default SingleRestaurant

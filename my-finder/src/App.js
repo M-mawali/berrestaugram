@@ -10,7 +10,7 @@ import AllRestaurant from './componets/AllResturannts';
 function App() {
   return (
     <div className="App">
-      <h1>  muhmmad ssss </h1> 
+      <h1>  muhmmad sssss </h1> 
       <Router>
       <NavBar/>
       <Routes>
