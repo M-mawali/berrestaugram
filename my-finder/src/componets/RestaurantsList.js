@@ -30,7 +30,7 @@ function RestaurantsList (){//api fatching
         const search = e.target.value;
 
         const searchedRestaurants = restaurants.filter((restaurant) =>
-        restaurant.name.toLowerCase().includes(search.toLowerCase()) ||  restaurant.cuisine.includes(search.toLowerCase())
+        restaurant.name.toLowerCase().includes(search.toLowerCase()) ||  restaurant.cuisine.toLowerCase().includes(search.toLowerCase())
         );
         setFilteredRestaurants(searchedRestaurants);
         console.log(filteredRstaurants)
@@ -74,7 +74,7 @@ function RestaurantsList (){//api fatching
                 <Link to={`/RestaurantsList/${restaurant.id}`}>
                     <br/>    
                     <div style={{fontSize:'15px'}}><h3>{restaurant.name}</h3></div>
-                    <div> Rate: <span style={{color:'gold'}}> {restaurant.rating} </span> ({restaurant.user_ratings_total}) <h3>{restaurant.cuisine}</h3></div>
+                    <div> Rate: <span style={{color:'gold'}}> {restaurant.rating} </span> ({restaurant.user_ratings_total}) <h3>{restaurant.cuisine} <span style={{color:'blue'}}>({restaurant.dietaryRestrictions})</span></h3></div>
                     <div className='res-img'><img src={restaurant.photos[0].links[1]} alt='' /></div>
                     <div className='open-now'>
                         {filteredRstaurants && restaurant && restaurant.opening_hours &&
