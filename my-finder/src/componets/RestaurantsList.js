@@ -18,10 +18,10 @@ function RestaurantsList (){//api fatching
     console.log(restaurants);
 
     const onChkClick = (e) => {//checkbox results handler
-        const name  =e.target
+        const name   =e.target
 
-        const chkcuisine = restaurants.filter((e,restaurant)=>{
-            e.cuisine[restaurant].includes(name.toLowerCase())});
+        const chkcuisine = restaurants.filter((restaurant)=>
+            restaurant.cuisine.toLowerCase().includes(name.toLowerCase())) ;
         setFilteredRestaurants(chkcuisine)
         console.log(filteredRstaurants)
     }
@@ -49,7 +49,7 @@ function RestaurantsList (){//api fatching
                     onChange={onSearchedRestaurants}
                 />
                 <div> 
-                <input type='checkbox' name='italian' checked onChange={onChkClick}/>italian&nbsp;&nbsp;
+                <input type='checkbox' name='italian' onChange={onChkClick}/>italian&nbsp;&nbsp;
                 <input type='checkbox' name='thai' onChange={onChkClick} />thai&nbsp;&nbsp;
                 <input type='checkbox' name='american' onChange={onChkClick} />american&nbsp;&nbsp;
                 <input type='checkbox' name='vietnameese' onChange={onChkClick} />vietnameese&nbsp;&nbsp;

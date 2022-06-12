@@ -115,3 +115,11 @@ a:hover {
   height: 500px;
   border-radius: 200px;
 }
+
+.singelRes-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
+  font-size: larger;
+}
