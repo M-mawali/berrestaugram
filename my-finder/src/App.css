@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,28 +9,29 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+  list-style: none;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: red;
+}
+
+.navBar {
+  background-color: blanchedalmond;
 }
 
 .search-div {
@@ -88,4 +85,33 @@
   max-height: 100%;
   max-width: 100%;
   border-radius: 175px ;
+}
+
+.open-now {
+  color:green;
+
+}
+
+.dishs-imgs {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  column-gap: 100px;
+}
+
+.dish {
+  margin-top: 100px;
+  width: auto;
+  /* width: auto; */
+  display: flex;
+  column-gap: 50 px;
+  row-gap: 50px;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.dish img {
+  width: 500px;
+  height: 500px;
+  border-radius: 200px;
 }
