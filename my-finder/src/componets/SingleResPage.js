@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+
 function SingleRestaurant() {
     const {id} = useParams();
     const [singleRes, SetSingleRes] = useState();
@@ -19,8 +20,26 @@ function SingleRestaurant() {
     console.log(singleRes)
 
     return (
-        <div className='single-page-name'>
-        {singleRes && <h3>{singleRes.name}</h3>}
+        <>
+        <div >
+        {singleRes && <h2>{singleRes.name}</h2>}
         </div>
+        <div>{singleRes && singleRes.cuisine && <h3> enjoy with us finest dishes from the  {singleRes.cuisine} cuisine</h3>} </div>
+        <div className='dishs-imgs'>
+            <div className="dish">  {singleRes && singleRes.photos && singleRes.photos[0] && singleRes.photos[0].links &&
+                    singleRes.photos[0].links[0] && (
+                    <img src={singleRes.photos[0].links[0]} alt='icon' />
+            )}</div>
+            <div className="dish">  {singleRes && singleRes.photos && singleRes.photos[0] && singleRes.photos[0].links &&
+                    singleRes.photos[0].links[1] && (
+                    <img src={singleRes.photos[0].links[1]} alt='icon' />
+            )}</div>
+            <div className="dish">  {singleRes && singleRes.photos && singleRes.photos[0] && singleRes.photos[0].links &&
+                    singleRes.photos[0].links[7] && (
+                    <img src={singleRes.photos[0].links[7]} alt='icon' />
+            )}</div>
+            
+        </div>
+        </>
     )}
 export default SingleRestaurant

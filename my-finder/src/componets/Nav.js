@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
 
     return(
-        <nav>
-            <Link to='/RestaurantsList.js'>
+        <nav className="navBar">
+            <Link to='/'>
             <ul>  
                 <li>Berrestaugram</li>
             </ul>

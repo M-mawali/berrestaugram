@@ -18,7 +18,7 @@ function RestaurantsList (){//api fatching
     console.log(restaurants);
 
     const onChkClick = (e) => {//checkbox results handler
-        const {name , checked} =e.target
+        const name  =e.target
 
         const chkcuisine = restaurants.filter((e,restaurant)=>{
             e.cuisine[restaurant].includes(name.toLowerCase())});
@@ -35,6 +35,7 @@ function RestaurantsList (){//api fatching
         setFilteredRestaurants(searchedRestaurants);
         console.log(filteredRstaurants)
         };
+
     
     return(
         <>
@@ -59,6 +60,14 @@ function RestaurantsList (){//api fatching
                 </div>
             </div>
 
+            <div>
+                <button >
+                    <Link to='/RestaurantsList'>
+                     browser all restaurants 
+                     </Link>
+                     </button>
+            </div>
+
         <div className='restaurants'>
         {filteredRstaurants && filteredRstaurants.map((restaurant) => (//restaurants list creating
             <div className='restaurant' key={restaurant.id}>
@@ -67,9 +76,12 @@ function RestaurantsList (){//api fatching
                     <div style={{fontSize:'15px'}}><h3>{restaurant.name}</h3></div>
                     <div> Rate: <span style={{color:'gold'}}> {restaurant.rating} </span> ({restaurant.user_ratings_total}) <h3>{restaurant.cuisine}</h3></div>
                     <div className='res-img'><img src={restaurant.photos[0].links[1]} alt='' /></div>
-                    <div><h3>Address:</h3>{restaurant.formatted_address}</div>
+                    <div className='open-now'>
+                        {filteredRstaurants && restaurant && restaurant.opening_hours &&
+                            restaurant.opening_hours.open_now && <h3> Open Now</h3>}
+                    </div>
                     </Link>
-            </div>  )
+            </div>  ) 
         )}
         </div>
         </>)}
