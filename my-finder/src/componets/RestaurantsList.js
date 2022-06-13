@@ -58,6 +58,9 @@ function RestaurantsList (){//api fatching
     
     return(
         <>
+        <div className='cooking'>
+            <img src='https://i.pinimg.com/originals/8b/b3/87/8bb387ee878eddeb23baea344d4e13af.gif' alt='cooking'></img>
+        </div>
             <div className='search-div' >
                 <input
                     className='Search'
