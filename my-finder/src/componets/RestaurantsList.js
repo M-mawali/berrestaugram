@@ -71,7 +71,7 @@ function RestaurantsList (){//api fatching
                         <div>
                   <label for='cuisine-select'>Filter 1 </label>
                   <select onChange={onSelect} name="cuisine"  id='cuisine-select' className='selector'>
-                  <option name='' >no select</option>
+                  <option name='' >choose a cuisine</option>
                       <option name='italian' >italian</option>
                       <option name='thai'>thai</option>
                       <option name='american'>american</option>
@@ -85,7 +85,7 @@ function RestaurantsList (){//api fatching
                       <div>
                       <label for='dietaryRestrictions-select'>Filter 2 </label>
                       <select onChange={ onSelect2} name="dietaryRestrictions"  id='dietaryRestrictions-select' className='selector' >
-                      <option name='no select' id='0'>no select</option>    
+                      <option name='no select' id='0'>choose a restrictionsn</option>    
                       <option name='halal' >halal</option>
                       <option name='kosher' >kosher</option>
                       <option name='gluten free' >gluten free</option>
@@ -98,9 +98,9 @@ function RestaurantsList (){//api fatching
             </div>
 
             <div>
-                <button >
+                <button  className='all-btn'>
                     <Link to='/RestaurantsList'>
-                     browser all restaurants 
+                     or you can browser all restaurants here  
                      </Link>
                      </button>
             </div>
@@ -121,8 +121,8 @@ function RestaurantsList (){//api fatching
             </div>  ) 
         )}  
         </div>
-        <div className='restaurants'>
-        {filteredRstaurants3.map((restaurant) => (//restaurants list creating
+        <div className='restaurants'> 
+        {filteredRstaurants3&& filteredRstaurants3.map((restaurant) => (//restaurants list creating
             <div className='restaurant' key={restaurant.id}>
                 <Link to={`/RestaurantsList/${restaurant.id}`}>
                     <br/>    

@@ -9,8 +9,7 @@ import AllRestaurant from './componets/AllResturannts';
 
 function App() {
   return (
-    <div className="App">
-      <h1>  muhmmad sssss </h1> 
+    <div className="App"> 
       <Router>
       <NavBar/>
       <Routes>

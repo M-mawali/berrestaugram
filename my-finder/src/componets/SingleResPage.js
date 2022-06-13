@@ -22,12 +22,12 @@ function SingleRestaurant() {
     console.log(singleRes)
 
     return (
-        <>
+        <div className="single-page">
         
-        <div >
-        {singleRes && <h2>{singleRes.name}</h2>}
+        <div > <br/>
+        {singleRes && <h2 style={{fontFamily:"Raleway"}}>{singleRes.name}</h2>}
         </div>
-        <div>{singleRes && singleRes.cuisine && <h3> Finest dishes from the  {singleRes.cuisine} cuisine</h3>} </div>
+        <div><br/>{singleRes && singleRes.cuisine && <h3 style={{fontFamily:"Raleway"}}> Finest dishes from the  {singleRes.cuisine} cuisine</h3>} </div>
         <div className='dishs-imgs'>
             <div className="dish">  {singleRes && singleRes.photos && singleRes.photos[0] && singleRes.photos[0].links &&
                     singleRes.photos[0].links[0] && (
@@ -43,27 +43,32 @@ function SingleRestaurant() {
             )}</div>
             
         </div>
-        <div className="singelRes-details">
-                <ul>{singleRes && singleRes.price_level===2 && <li>Price : $$ </li>}
-                    {singleRes && singleRes.price_level===1 && <li>Price : $ </li>}
-                    {singleRes && singleRes.price_level===3 && <li>price : $$$ </li>}
-                    {singleRes && singleRes.price_level===4 && <li>price : $$$$ </li>}
-                    {singleRes && singleRes.opening_hours.hours && <li> Openinig Time : {singleRes.opening_hours.hours.open} - {singleRes.opening_hours.hours.close}</li>}
-                    {singleRes && singleRes.delivery===true ? <li> delivery : ✔️  </li>
-                                                            : <li> delivery : ❌ </li> }
-                    {singleRes && singleRes.pickup===true ? <li>pickup : ✔️</li>
-                                                          : <li>pickup : ❌ </li>}
+        <div className="singelRes-details" >
+                <ul >{singleRes && singleRes.price_level===2 && <li style={{fontFamily:"Raleway"}}>Price : €€ </li>}
+                    {singleRes && singleRes.price_level===1 && <li style={{fontFamily:"Raleway"}}>Price : € </li>}
+                    {singleRes && singleRes.price_level===3 && <li style={{fontFamily:"Raleway"}}>price : €€€ </li>}
+                    {singleRes && singleRes.price_level===4 && <li style={{fontFamily:"Raleway"}}>price : €€€€ </li>}
+                    {singleRes && singleRes.opening_hours.hours && <li style={{fontFamily:"Raleway"}}> Openinig Time : {singleRes.opening_hours.hours.open} - {singleRes.opening_hours.hours.close}</li>}</ul>
+                    <ul>{singleRes && singleRes.delivery===true ? <li style={{fontFamily:"Raleway"}}> delivery : ✔️  </li>
+                                                            : <li style={{fontFamily:"Raleway"}}> delivery : ❌ </li> }
+                    {singleRes && singleRes.pickup===true ? <li style={{fontFamily:"Raleway"}}>pickup : ✔️</li>
+                                                          : <li style={{fontFamily:"Raleway"}}>pickup : ❌ </li>}
                 </ul>
-                <ul>
-                {singleRes && singleRes.social && singleRes.social.phone && <li>Phone-Number : {singleRes.social.phone} </li>}
-                {singleRes && singleRes.social && singleRes.social.email && <li>Email : {singleRes.social.email } </li>}
-                </ul>
+                
             </div>
-            <div>
+            <div><br/><br></br>
                 {singleRes && singleRes.geometry && singleRes.geometry.location && <YMaps>
     <div className="res-map">
-        {singleRes && singleRes.formatted_address && <h3>{singleRes.formatted_address}</h3>}
-      <Map defaultState={{ center: [singleRes.geometry.location.lat, singleRes.geometry.location.lng], zoom: 12 }} height='650px' width='1200px'>
+       <div className="location"> <br/> <li style={{fontFamily:"Raleway"}}> 📍 Location</li>
+        {singleRes && singleRes.formatted_address && <li style={{fontFamily:"Raleway"}}>{singleRes.formatted_address}</li>}
+        <br/><br/>
+        <li style={{fontSize:"23px" ,fontFamily:"Raleway" }} > Contact Informations</li><br/>
+                <li style={{fontSize:"38px"}}>📱</li> 
+                {singleRes && singleRes.social && singleRes.social.phone && <li style={{fontFamily:"Raleway"}}>Phone-Number : {singleRes.social.phone} </li>}
+                <li style={{fontSize:"38px"}}>📧</li>
+                {singleRes && singleRes.social && singleRes.social.email && <li style={{fontFamily:"Raleway"}}>Email : {singleRes.social.email } </li>}
+        </div>
+      <div className="map"><Map defaultState={{ center: [singleRes.geometry.location.lat, singleRes.geometry.location.lng], zoom: 12 }} height='320px' width='900px'>
           <Placemark geometry={ [singleRes.geometry.location.lat, singleRes.geometry.location.lng]}/>
           <FullscreenControl options={{float: 'left'}}/>
           <GeolocationControl options={{float:'right'}}/>
@@ -71,9 +76,10 @@ function SingleRestaurant() {
 
       </Map>
     </div>
+    </div>
   </YMaps>}
             </div>
-            
-        </>
+     
+        </div>
     )}
 export default SingleRestaurant

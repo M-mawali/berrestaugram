@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -15,8 +16,17 @@
 
 li {
   list-style: none;
+  font-family: 'Cantarell', sans-serif;
+  font-size: larger;
 }
+ ul {
+  font-family: 'Cantarell', sans-serif;
+ }
 
+ h1 {
+  font-family: 'Cantarell', sans-serif;
+  font-size:larger;
+ }
 a:link {
   text-decoration: none;
   color: black;
@@ -30,18 +40,37 @@ a:hover {
   color: red;
 }
 
+body {
+  background-color: #FAF0D7;
+  font-family: 'Cantarell', sans-serif;
+}
+
 .navBar {
-  background-color: blanchedalmond;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #8CC0DE;
+  width: max-width;
+  width: 100%;
+  margin-top: -15;
+  padding-top: 0;
+  border: 2px solid #E4EFE7;
+  margin-left: -10px;
 }
 
 .search-div {
   display: flex;
-  margin-left: 150px;
+  justify-content: space-around;
+  margin-top: 150px;
+  
+  
 }
 
 .Search {
-  
+  font-family: 'Cantarell', sans-serif;
   border-radius: 40px;
+  border: none;
   width: 700px;
   height: 65px;
   margin: 12px 5px;
@@ -50,56 +79,77 @@ a:hover {
   font-size: 1.2rem;
   cursor: pointer;
   text-align: center;
+  background-color: #FFD9C0;
+  
 }
 
 .selector {
+  font-family: 'Cantarell', sans-serif;
   border-radius: 40px;
+  border: none;
   width: 350px;
-  height: 22.5px;
+  height: 30.5px;
   text-align: center;
   cursor: pointer;
   font-size: 1.2rem;
   margin: 12px 5px;
+  background-color: #FFD9C0;
+}
+
+.all-btn {
+  margin-top: 75px;
+  font-family: 'Cantarell', sans-serif;
+  width: 400px;
+  font-size: 1.2rem;
+  border: 10px #FDFAF6 ;
+  border-radius: 10px;
+  background-color: #FFD9C0;
 }
 
 .restaurants {
   margin-left: 100px;
-  column-gap: 100px;
+  column-gap: 75px;
+  row-gap: 50px;
   display: flex;
   margin-top: 100px;
   text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
-  row-gap: 100px;
+ 
 }
 
 .restaurant {
-  background-color: rgb(170, 178, 175);
+  background-color: #8CC0DE;
   margin-top: 50px;
   width: 500px;
   height: 511px;
   display: flex;
-  border-radius: 250px;
+  border-radius: 25px;
   flex-direction: column;
   margin-bottom: 5px;
 }
 .res-img {
   width: 500px;
-  height: 350px;
+  height: 370px;
+  border-radius: 25px;
 }
 
 
 .res-img img {
-  width: 350px;
-  height: 350px;
+  width: 500px;
+  height: 370px;
   max-height: 100%;
   max-width: 100%;
-  border-radius: 175px ;
+  border-radius: 25px ;
 }
 
 .open-now {
   color:green;
 
+}
+
+.single-page{
+  font-family: 'Cantarell', sans-serif;
 }
 
 .dishs-imgs {
@@ -112,7 +162,6 @@ a:hover {
 .dish {
   margin-top: 100px;
   width: auto;
-  /* width: auto; */
   display: flex;
   column-gap: 50 px;
   row-gap: 50px;
@@ -121,21 +170,51 @@ a:hover {
 }
 
 .dish img {
-  width: 500px;
-  height: 500px;
-  border-radius: 200px;
+  width: 450px;
+  height: 400px;
+  border: 20px #E4EFE7 ;
+  border-radius: 20px;
+  
 }
 
 .singelRes-details {
+  width: 800px;
+  margin-left: 500px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 100px;
   font-size: larger;
+  background-color: beige;
+  border: 0.1px transparent;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+}
+
+.location{
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  border: 0.1px transparent;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
 }
 
 .res-map {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  margin-bottom: 50px;
 }
+
+.map {
+  height: 320px;
+  width: 900px;
+  border: 0.1px transparent;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+}
+

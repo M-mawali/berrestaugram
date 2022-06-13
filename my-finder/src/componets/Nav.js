@@ -8,12 +8,9 @@ const NavBar = () => {
         <nav className="navBar">
             <Link to='/'>
             <ul>  
-                <li>Berrestaugram</li>
+                <li style={{fontSize:'40px', fontFamily:"cursive"}}>Berrestaugram</li>
             </ul>
             </Link>
-            <ul> 
-                <li>About us</li> 
-            </ul>
         </nav>
     )
 }
