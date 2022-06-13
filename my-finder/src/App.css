@@ -43,13 +43,23 @@ a:hover {
   
   border-radius: 40px;
   width: 700px;
-  height: 45px;
+  height: 65px;
   margin: 12px 5px;
   text-decoration: none;
   color: var(--text-color);;
   font-size: 1.2rem;
   cursor: pointer;
   text-align: center;
+}
+
+.selector {
+  border-radius: 40px;
+  width: 350px;
+  height: 22.5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 12px 5px;
 }
 
 .restaurants {
