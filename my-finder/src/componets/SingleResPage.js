@@ -25,9 +25,10 @@ function SingleRestaurant() {
         <div className="single-page">
         
         <div > <br/>
-        {singleRes && <h2 style={{fontFamily:"Raleway"}}>{singleRes.name}</h2>}
+        {singleRes && <h2 style={{fontFamily:"Raleway"}}>{singleRes.name} 🍴 </h2>}
+        <li style={{fontSize:"38px"}}>🍛</li>
         </div>
-        <div><br/>{singleRes && singleRes.cuisine && <h3 style={{fontFamily:"Raleway"}}> Finest dishes from the  {singleRes.cuisine} cuisine</h3>} </div>
+        <div>{singleRes && singleRes.cuisine && <li style={{fontFamily:"Raleway"}}> Finest dishes from the  {singleRes.cuisine} cuisine</li>} </div>
         <div className='dishs-imgs'>
             <div className="dish">  {singleRes && singleRes.photos && singleRes.photos[0] && singleRes.photos[0].links &&
                     singleRes.photos[0].links[0] && (
@@ -43,7 +44,7 @@ function SingleRestaurant() {
             )}</div>
             
         </div>
-        <div className="singelRes-details" >
+        <div className="detls-card"><div className="singelRes-details" >
                 <ul >{singleRes && singleRes.price_level===2 && <li style={{fontFamily:"Raleway"}}>Price : €€ </li>}
                     {singleRes && singleRes.price_level===1 && <li style={{fontFamily:"Raleway"}}>Price : € </li>}
                     {singleRes && singleRes.price_level===3 && <li style={{fontFamily:"Raleway"}}>price : €€€ </li>}
@@ -55,7 +56,7 @@ function SingleRestaurant() {
                                                           : <li style={{fontFamily:"Raleway"}}>pickup : ❌ </li>}
                 </ul>
                 
-            </div>
+            </div></div>
             <div><br/><br></br>
                 {singleRes && singleRes.geometry && singleRes.geometry.location && <YMaps>
     <div className="res-map">

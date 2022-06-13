@@ -205,6 +205,13 @@ body {
   box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
 }
 
+.detls-card {
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .location{
   height: 320px;
   display: flex;
