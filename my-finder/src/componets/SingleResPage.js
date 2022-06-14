@@ -4,26 +4,25 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { YMaps, Map, Placemark, FullscreenControl, GeolocationControl ,RouteButton } from '@pbe/react-yandex-maps';
 
-
+// this module to cereat single restuarant page 
 
 function SingleRestaurant() {
-    const {id} = useParams();
+    const {id} = useParams(); // to get the id of each resturant to included in url
     const [singleRes, SetSingleRes] = useState();
-
-    useEffect(()=>{
+    
+    useEffect(()=>{// data 
         async function dataFetch () {
             const data =await fetch('https://redi-final-restaurants.herokuapp.com/restaurants/');
             const response = await data.json();
             const resId = response.results.find((rest) => rest.id === id)
             SetSingleRes(resId);
+            
         } 
         dataFetch()
     },[id]);
-    console.log(singleRes)
-
+    console.log(singleRes) 
     return (
         <div className="single-page">
-        
         <div > <br/>
         {singleRes && <h2 style={{fontFamily:"Raleway"}}>{singleRes.name} 🍴 </h2>}
         <li style={{fontSize:"38px"}}>🍛</li>
@@ -83,4 +82,6 @@ function SingleRestaurant() {
      
         </div>
     )}
+   
+    
 export default SingleRestaurant

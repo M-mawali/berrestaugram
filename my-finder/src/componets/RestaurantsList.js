@@ -2,15 +2,16 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// this page where you can search and filter to find a restaurant
 
-function RestaurantsList (){//api fatching
+function RestaurantsList (){
     const [restaurants,setRestaurants] =useState([]);
     const [filteredRstaurants,setFilteredRestaurants] =useState([]);
     const [filteredRstaurants2,setFilteredRestaurants2] =useState([]);
     const [filteredRstaurants3,setFilteredRestaurants3] =useState([]);
     
     
-    useEffect(()=>{
+    useEffect(()=>{ // api fatching and getting data 
         async function dataFetch () {
             const data =await fetch('https://redi-final-restaurants.herokuapp.com/restaurants/');
             const response = await data.json();
@@ -21,25 +22,25 @@ function RestaurantsList (){//api fatching
     console.log(restaurants);
 
 
-    const onSelect = (e ) => {//checkbox results handler
+    const onSelect = (e ) => {//handling select filter 1 for specifing the data 
         const name   =e.target.value
         
         const selector = restaurants.filter((restaurant)=>
             restaurant.cuisine.toLowerCase().includes(name.toLowerCase()) ) 
-            setFilteredRestaurants2(selector)
+            setFilteredRestaurants2(selector)// this goes for selector2 in onSelect2 function
             setFilteredRestaurants(selector)
         console.log(filteredRstaurants)
         console.log(name)
         
     } 
 
-    const onSelect2 = (e ) => {//checkbox results handler
+    const onSelect2 = (e ) => {//handling select filter 2 for specifing the data 
         const name   =e.target.value
-    const  selector2 =  filteredRstaurants2.filter((restaurant ) =>
+    const  selector2 =  filteredRstaurants2.filter((restaurant ) =>// selector 2 work together with selector 1 from functon onSelect
      restaurant.dietaryRestrictions.toLowerCase().includes(name.toLowerCase())) 
        setFilteredRestaurants(selector2)
 
-    const selector3 =restaurants.filter((restaurant ) =>
+    const selector3 =restaurants.filter((restaurant ) => 
      restaurant.dietaryRestrictions.toLowerCase().includes(name.toLowerCase()))    
         setFilteredRestaurants3(selector3)
         console.log(name)
@@ -62,7 +63,7 @@ function RestaurantsList (){//api fatching
             <img src='https://i.pinimg.com/originals/8b/b3/87/8bb387ee878eddeb23baea344d4e13af.gif' alt='cooking'></img>
         </div>
             <div className='search-div' >
-                <input
+                <input style={{fontFamily:'Raleway'}}// search 
                     className='Search'
                     autoFocus='on'
                     autoComplete='off'
@@ -73,7 +74,7 @@ function RestaurantsList (){//api fatching
                 <div className='selectors'> 
                         <div>
                   <label for='cuisine-select'>Filter 1 </label>
-                  <select onChange={onSelect} name="cuisine"  id='cuisine-select' className='selector'>
+                  <select style={{fontFamily:'Raleway'}} onChange={onSelect} name="cuisine"  id='cuisine-select' className='selector'>
                   <option name='' >choose a cuisine</option>
                       <option name='italian' >italian</option>
                       <option name='thai'>thai</option>
@@ -87,7 +88,7 @@ function RestaurantsList (){//api fatching
                       </div>
                       <div>
                       <label for='dietaryRestrictions-select'>Filter 2 </label>
-                      <select onChange={ onSelect2} name="dietaryRestrictions"  id='dietaryRestrictions-select' className='selector' >
+                      <select style={{fontFamily:'Raleway'}} onChange={ onSelect2} name="dietaryRestrictions"  id='dietaryRestrictions-select' className='selector' >
                       <option name='no select' id='0'>choose a restrictionsn</option>    
                       <option name='halal' >halal</option>
                       <option name='kosher' >kosher</option>
@@ -101,7 +102,7 @@ function RestaurantsList (){//api fatching
             </div>
 
             <div>
-                <button  className='all-btn'>
+                <button style={{fontFamily:'Raleway'}}  className='all-btn'>
                     <Link to='/RestaurantsList'>
                      or you can browser all restaurants here  
                      </Link>
@@ -109,7 +110,7 @@ function RestaurantsList (){//api fatching
             </div>
 
         <div className='restaurants'>
-        {filteredRstaurants && filteredRstaurants.map((restaurant) => (//restaurants list creating
+        {filteredRstaurants && filteredRstaurants.map((restaurant) => (//restaurants list creating depending on the search or selectors inputs
             <div className='restaurant' key={restaurant.id}>
                 <Link to={`/RestaurantsList/${restaurant.id}`}>
                     <br/>    
@@ -125,7 +126,7 @@ function RestaurantsList (){//api fatching
         )}  
         </div>
         <div className='restaurants'> 
-        {filteredRstaurants3&& filteredRstaurants3.map((restaurant) => (//restaurants list creating
+        {filteredRstaurants3&& filteredRstaurants3.map((restaurant) => (//restaurants list creating from the Selector3
             <div className='restaurant' key={restaurant.id}>
                 <Link to={`/RestaurantsList/${restaurant.id}`}>
                     <br/>    
