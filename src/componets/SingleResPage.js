@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { YMaps, Map, Placemark, FullscreenControl, GeolocationControl ,RouteButton } from '@pbe/react-yandex-maps';
 
-// this module to cereat single restuarant page 
+// this module to cereat single restuarant page ..
 
 function SingleRestaurant() {
     const {id} = useParams(); // to get the id of each resturant to included in url

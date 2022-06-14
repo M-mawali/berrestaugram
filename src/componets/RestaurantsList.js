@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// this page where you can search and filter to find a restaurant
+// this page where you can search and filter to find a restaurant..
 
 function RestaurantsList (){
     const [restaurants,setRestaurants] =useState([]);
